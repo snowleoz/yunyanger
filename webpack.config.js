@@ -104,7 +104,6 @@ module.exports = {
     plugins: [
         new HtmlWebapckPlugin({
             template: path.resolve(__dirname, 'src/index.html'),
-            favicon: path.resolve(__dirname, 'src/favicon.ico'),
             chunks: ['index']
         }),
         // new Webpack.optimize.CommonsChunkPlugin({names:['manifest']}),
