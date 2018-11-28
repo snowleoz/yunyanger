@@ -1,0 +1,57 @@
+{
+  "connection": "default",
+  "collectionName": "adlist",
+  "info": {
+    "name": "adlist",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "sex": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "breed": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "age": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "ad_type": {
+      "default": "",
+      "type": "string",
+      "required": true
+    },
+    "ad_status": {
+      "default": false,
+      "type": "boolean",
+      "required": true
+    },
+    "ad_cover": {
+      "default": "",
+      "type": "string"
+    },
+    "created_At": {
+      "default": "",
+      "type": "date"
+    },
+    "updated_At": {
+      "default": "",
+      "type": "date"
+    },
+    "map_addetail_id": {
+      "default": "",
+      "type": "string"
+    }
+  }
+}

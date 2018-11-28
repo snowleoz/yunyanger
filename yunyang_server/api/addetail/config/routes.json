@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/addetails",
+      "handler": "Addetail.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/addetails/count",
+      "handler": "Addetail.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/addetails/:_id",
+      "handler": "Addetail.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/create/addetails",
+      "handler": "Addetail.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/addetails/:_id",
+      "handler": "Addetail.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/addetails/:_id",
+      "handler": "Addetail.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

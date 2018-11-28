@@ -1,0 +1,25 @@
+{
+  "name": "yunyangriji",
+  "version": "1.0.0",
+  "description": "yunyangriji site ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snowleoz/yunyangriji.git"
+  },
+  "keywords": [
+    "pet"
+  ],
+  "author": "snowleo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/snowleoz/yunyangriji/issues"
+  },
+  "homepage": "https://github.com/snowleoz/yunyangriji#readme",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}

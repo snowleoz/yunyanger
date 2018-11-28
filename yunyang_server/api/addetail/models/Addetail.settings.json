@@ -1,0 +1,32 @@
+{
+  "connection": "default",
+  "collectionName": "addetail",
+  "info": {
+    "name": "addetail",
+    "description": ""
+  },
+  "options": {
+  },
+  "attributes": {
+    "updated_At": {
+      "default": "",
+      "type": "date"
+    },
+    "created_At": {
+      "default": "",
+      "type": "date"
+    },
+    "big_pic_src": {
+      "default": "",
+      "type": "string"
+    },
+    "small_pic_src": {
+      "default": "",
+      "type": "string"
+    },
+    "detail_text": {
+      "default": "",
+      "type": "string"
+    }
+  }
+}

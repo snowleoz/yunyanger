@@ -1,0 +1,50 @@
+{
+  "name": "yunyang_server",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application.",
+  "main": "./server.js",
+  "scripts": {
+    "setup": "cd admin && npm run setup",
+    "start": "node server.js",
+    "strapi": "node_modules/strapi/bin/strapi.js",
+    "lint": "node_modules/.bin/eslint api/**/*.js config/**/*.js plugins/**/*.js",
+    "postinstall": "node node_modules/strapi/lib/utils/post-install.js"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-react": "^6.8.0"
+  },
+  "dependencies": {
+    "lodash": "4.x.x",
+    "mongoose": "^5.3.13",
+    "puppeteer": "^1.10.0",
+    "qiniu": "^7.2.1",
+    "strapi": "3.0.0-alpha.14.4.0",
+    "strapi-hook-mongoose": "3.0.0-alpha.14.4.0"
+  },
+  "author": {
+    "name": "A Strapi developer",
+    "email": "",
+    "url": ""
+  },
+  "maintainers": [
+    {
+      "name": "A Strapi developer",
+      "email": "",
+      "url": ""
+    }
+  ],
+  "strapi": {
+    "packageManager": "npm",
+    "uuid": "474cf610-4587-4046-b0f4-3b90dc815e5b"
+  },
+  "engines": {
+    "node": ">= 9.0.0",
+    "npm": ">= 5.0.0"
+  },
+  "license": "MIT"
+}
