@@ -1,0 +1,59 @@
+.detail_wrap{
+    background-color:#fff;
+    margin-top:30px;
+    box-shadow: 0px 0px 4px 0 rgba(0, 0, 0, .8);
+    border-radius: 4px;
+    padding: 36px 0 30px 20px;
+}
+.detail{
+    display:inline-block;
+    width:70%;
+    vertical-align:top;
+}
+.detail_side{
+    display:inline-block;
+    width:30%;
+    padding: 0px 20px 10px;
+}
+.detail_meta{
+    position: relative;
+}
+.detail_carousel_wrap,.detail_info{
+    display:inline-block;
+    width:50%;
+    min-height:220px;
+    vertical-align:top;
+}
+.detail_info{
+    position: absolute;
+    right:0;
+    top:0;
+    height:100%;
+    padding:0 20px;
+}
+.detail_info p {
+    font-size:16px;
+    margin-bottom:20px;
+}
+.detail_ad_btn{
+    width: 140px;
+    height: 42px;
+    font-size: 16px;
+}
+.detail_desc{
+    margin-top:20px;
+}
+.detail_desc h2{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.detail_desc h2 span{
+    border-bottom: 2px solid #1890ff;
+    padding-bottom: 6px;
+}
+.desc p{
+    line-height:40px;
+}
+.modal_text{
+    line-height:36px;
+}

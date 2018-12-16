@@ -1,0 +1,26 @@
+{
+  "connection": "default",
+  "collectionName": "adnews",
+  "info": {
+    "name": "adnews",
+    "description": ""
+  },
+  "attributes": {
+    "content": {
+      "default": "",
+      "type": "text"
+    },
+    "title": {
+      "default": "",
+      "type": "string"
+    },
+    "created_At": {
+      "default": "",
+      "type": "date"
+    },
+    "updated_At": {
+      "default": "",
+      "type": "date"
+    }
+  }
+}

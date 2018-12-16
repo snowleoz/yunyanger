@@ -5,8 +5,7 @@
     "name": "addetail",
     "description": ""
   },
-  "options": {
-  },
+  "options": {},
   "attributes": {
     "updated_At": {
       "default": "",
@@ -25,6 +24,26 @@
       "type": "string"
     },
     "detail_text": {
+      "default": "",
+      "type": "string"
+    },
+    "name": {
+      "default": "",
+      "type": "string"
+    },
+    "sex": {
+      "default": "",
+      "type": "string"
+    },
+    "age": {
+      "default": "",
+      "type": "string"
+    },
+    "ad_status": {
+      "default": "",
+      "type": "string"
+    },
+    "breed": {
       "default": "",
       "type": "string"
     }

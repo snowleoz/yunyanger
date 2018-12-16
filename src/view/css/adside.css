@@ -1,0 +1,25 @@
+.ad_sides_wrap h2{
+    font-size:18px;
+    margin-bottom:20px;
+}
+.ad_sides_wrap h2 span{
+    border-bottom:2px solid #1890ff;
+    padding-bottom:6px;
+}
+.ad_sides{
+    margin-bottom:20px;
+}
+.ad_sides .ant-card-body{
+    background-color: #1890ff;
+}
+.ad_sides .ant-card-meta-title,
+.ad_sides .ant-card-meta-description{
+    color:#fff;
+}
+.ad_sides .ant-card-hoverable{
+    border:1px solid #bbb;
+    border-radius:4px;
+}
+.ad_sides .ant-card-hoverable:hover{
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, .8);
+}

@@ -1,0 +1,20 @@
+.nav_menu{
+    display:flex;
+    border:1px solid transparent;
+    border-radius: 6px;
+}
+.nav_menu li{
+    flex:1;
+    font-size: 16px;
+    box-sizing:border-box;
+    text-align:center;
+}
+.ant-menu-item,
+.ant-menu-submenu{
+    transition:.2s;
+}
+.ant-menu-horizontal > .ant-menu-item:hover,
+.ant-menu-horizontal > .ant-menu-submenu:hover{
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0,.4);
+    border-radius: 4px;
+}

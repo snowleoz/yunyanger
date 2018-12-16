@@ -18,7 +18,8 @@ module.exports = {
     if (ctx.query._q) {
       return strapi.services.adlist.search(ctx.query);
     } else {
-      return strapi.services.adlist.fetchAll(ctx.query);
+      // return strapi.services.adlist.fetchAll(ctx.query);
+      return strapi.services.adlist.fetchAll(ctx.request.body);
     }
   },
 

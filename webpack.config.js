@@ -10,21 +10,17 @@ const tinyPngWebpackPlugin = require('tinypng-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
     entry: {
-        index: path.resolve(__dirname, './src/index.js'),
+        index: path.resolve(__dirname, './src/index.js')
     },
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: '[name].bundle.[hash:5].js',
-        chunkFilename:'[name].bundle.[hash:5].js',
+        chunkFilename: '[name].bundle.[hash:5].js',
         publicPath: '/'
     },
-    // externals: {
-    //     'react': 'React',
-    //     'react-dom': 'ReactDOM',
-    //     'react-router-dom': 'ReactRouterDOM',
-    //     'axios': 'axios',
-    //     'antd': 'antd'
-    // },
+    // externals: {     'react': 'React',     'react-dom': 'ReactDOM',
+    // 'react-router-dom': 'ReactRouterDOM',     'axios': 'axios',     'antd':
+    // 'antd' },
     resolve: {
         alias: {
             view: path.resolve(__dirname, './src/view')
@@ -34,9 +30,7 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                include: [
-                    path.resolve(__dirname, 'src'),
-                ],
+                include: [path.resolve(__dirname, 'src')],
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
@@ -67,15 +61,12 @@ module.exports = {
                             loader: 'postcss-loader',
                             options: {
                                 ident: 'postcss',
-                                plugins: loader => [
-                                    Cssnext({
+                                plugins: loader => [Cssnext({
                                         features: {
                                             rem: false
                                         },
                                         browser: ['>1%', 'last 10 versions', 'not ie <= 8']
-                                    }),
-                                    flexibility
-                                ]
+                                    })]
                             }
                         }
                     ]
@@ -108,38 +99,43 @@ module.exports = {
         }),
         // new Webpack.optimize.CommonsChunkPlugin({names:['manifest']}),
         new ExtractTextWebpackPlugin('css/[name].[hash:5].css'),
-        new PurifyCss({
-            paths: Glob.sync([
-                path.resolve(__dirname, 'src/*.js'),
-                path.resolve(__dirname, 'src/*.html'),
-                path.resolve(__dirname, 'src/**/*.js'),
-                path.resolve(__dirname, './node_modules/antd/dist/*.js')
-            ]),
-            minimize: true
-        }),
-        new Webpack
-            .optimize
-            .ModuleConcatenationPlugin({}),
-        new Webpack
-            .optimize
-            .UglifyJsPlugin({
-                parallel: 4,
-                uglifyOptions: {
-                    output: {
-                        comments: false,
-                        beautify: false
-                    },
-                    compress: {
-                        warnings: false
-                    }
-                },
-                cache: true
-            }),
-        new tinyPngWebpackPlugin({
-            key: 'TikTGmc9mJvMI4xHe2QpQb9lL2vRoqQP',
-            ext: ['png', 'jpeg', 'jpg']
-        }),
-        new CleanWebpackPlugin(['dist'])
+        // new PurifyCss({
+        //     paths: Glob.sync([
+        //         path.resolve(__dirname, 'src/*.js'),
+        //         path.resolve(__dirname, 'src/*.html'),
+        //         path.resolve(__dirname, 'src/**/*.js'),
+        //         path.resolve(__dirname, './node_modules/antd/dist/*.js')
+        //     ]),
+        //     minimize: true
+        // }),
+        // new Webpack
+        //     .optimize
+        //     .ModuleConcatenationPlugin({}),
+        // new Webpack
+        //     .optimize
+        //     .UglifyJsPlugin({
+        //         parallel: 4,
+        //         uglifyOptions: {
+        //             output: {
+        //                 comments: false,
+        //                 beautify: false
+        //             },
+        //             compress: {
+        //                 warnings: false
+        //             }
+        //         },
+        //         cache: true
+        //     }),
+        // new tinyPngWebpackPlugin({
+        //     key: 'TikTGmc9mJvMI4xHe2QpQb9lL2vRoqQP',
+        //     ext: ['png', 'jpeg', 'jpg']
+        // }),
+        new CleanWebpackPlugin(['dist']),
+        // new Webpack.DefinePlugin({
+        //     'process.env': {
+        //         'NODE_ENV': '"production"'
+        //     }
+        // })
     ],
     devServer: {
         contentBase: path.resolve(__dirname, 'dist'),

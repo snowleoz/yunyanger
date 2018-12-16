@@ -1,0 +1,30 @@
+.carousel_wrap{
+    display:inline-block;
+    width:30%;
+    min-height:300px;
+    vertical-align:top;
+    box-shadow: 0px 0px 4px 0 rgba(0, 0, 0, .8)
+}
+.home_carousel{
+    width:100%;
+}
+.home_carousel .ant-card-bordered{
+    border:none;
+}
+.carousel_item img{
+    max-width:100%;
+}
+.carousel_item .ant-card-body{
+    padding-bottom:34px;
+    background-color:#1890ff;
+}
+.carousel_item .ant-card-cover{
+    min-height:120px;
+}
+.carousel_item .carousel_desc,
+.carousel_item .carousel_title{
+    color:#fff;
+}
+.carousel_item .carousel_desc p{
+    line-height:32px;
+}

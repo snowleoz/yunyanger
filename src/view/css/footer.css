@@ -1,0 +1,22 @@
+.footer-wrap{
+    margin:30px 0 30px;
+}
+.footer{
+    position: relative;
+    width:1200px;
+    margin:0 auto;
+    padding:10px 20px;
+    box-shadow: 0px 0px 4px 0 rgba(0, 0, 0, .8);
+    background-color: #fff;
+    border-radius: 6px;
+}
+.footer p{
+    line-height:46px;
+}
+.footer_logo{
+    width:180px;
+    position: absolute;
+    right:100px;
+    top:50%;
+    transform:translateY(-50%);
+}

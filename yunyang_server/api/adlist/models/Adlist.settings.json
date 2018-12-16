@@ -52,6 +52,14 @@
     "map_addetail_id": {
       "default": "",
       "type": "string"
+    },
+    "is_carousel": {
+      "default": false,
+      "type": "boolean"
+    },
+    "carousel_cover": {
+      "default": "",
+      "type": "string"
     }
   }
 }

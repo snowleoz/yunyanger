@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/adnews",
+      "handler": "Adnews.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/adnews/count",
+      "handler": "Adnews.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/adnews/:_id",
+      "handler": "Adnews.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/create/adnews",
+      "handler": "Adnews.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/adnews/:_id",
+      "handler": "Adnews.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/adnews/:_id",
+      "handler": "Adnews.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

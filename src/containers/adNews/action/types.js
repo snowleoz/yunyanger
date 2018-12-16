@@ -1,0 +1,1 @@
+export const GET_NEWS_DATA = 'get_news_data';
