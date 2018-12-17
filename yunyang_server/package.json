@@ -6,7 +6,7 @@
   "main": "./server.js",
   "scripts": {
     "setup": "cd admin && npm run setup",
-    "start": "node server.js",
+    "start": "./node_modules/.bin/strapi start",
     "strapi": "node_modules/strapi/bin/strapi.js",
     "lint": "node_modules/.bin/eslint api/**/*.js config/**/*.js plugins/**/*.js",
     "postinstall": "node node_modules/strapi/lib/utils/post-install.js"
@@ -23,7 +23,7 @@
     "mongoose": "^5.3.13",
     "puppeteer": "^1.10.0",
     "qiniu": "^7.2.1",
-    "strapi": "3.0.0-alpha.14.4.0",
+    "strapi": "^3.0.0-alpha.14.4.0",
     "strapi-hook-mongoose": "3.0.0-alpha.14.4.0"
   },
   "author": {
