@@ -1,0 +1,14 @@
+import './view/css/app.css';
+import './view/css/home.css'
+import './view/css/header.css';
+import './view/css/footer.css';
+import './view/css/menu.css';
+import './view/css/carousel.css';
+import './view/css/bulletin.css';
+import './view/css/adcard.css';
+import './view/css/adsinglepage.css';
+import './view/css/addetail.css';
+import './view/css/adlist.css';
+import './view/css/adside.css';
+import './view/css/adnews.css';
+import './view/css/responsive.css';

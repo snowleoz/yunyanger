@@ -1,10 +1,15 @@
 import React, {Component} from 'react';
 import {Button} from 'antd';
 import AdCardSingle from '../adCardSingle';
-import '../css/adlist.css';
 class AdListUI extends Component {
     constructor(props) {
         super(props);
+        let title_name = {
+            'wait_cat':'待领养猫咪',
+            'wait_dog':'待领养狗狗',
+            'luck_cat':'已领养猫咪',
+            'luck_dog':'已领养狗狗'
+        }
         let type_pathname = props
             .match
             .path
@@ -27,6 +32,7 @@ class AdListUI extends Component {
                 ad_status: true
             }
         }
+        this.title = title_name[type_pathname];
         this.params = type[type_pathname];
         this.page = 0;
         this.load_more = false;
@@ -62,6 +68,9 @@ class AdListUI extends Component {
             .unmountDeleteData();
     }
     render() {
+        document.title = `深圳领养之家—${this.title}`;
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
         let data = this.props.dataSource
             ? this.props.dataSource
             : [];

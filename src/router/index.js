@@ -1,12 +1,30 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
-import Home from '../containers/home';
-import AdList from '../containers/adList';
-import AdSinglePage from '../containers/adSinglePage';
-import AdNews from '../containers/adNews';
-import Addetail from '../containers/adDetail';
 import {Provider} from 'react-redux';
 import store from '../store';
+import Loadable from 'react-loadable';
+const dynamicComps = {
+    Home:Loadable({
+        loader:()=>import('../containers/home'),
+        loading:()=>null
+    }),
+    AdList:Loadable({
+        loader:()=>import('../containers/adList'),
+        loading:()=>null
+    }),
+    AdSinglePage:Loadable({
+        loader:()=>import('../containers/adSinglePage'),
+        loading:()=>null
+    }),
+    AdNews:Loadable({
+        loader:()=>import('../containers/adNews'),
+        loading:()=>null
+    }),
+    Addetail:Loadable({
+        loader:()=>import('../containers/adDetail'),
+        loading:()=>null
+    }),
+}
 function Routes(paths, comps) {
     return (paths.map(item => {
         return (<Route path={item} exact component={comps} key={item}/>)
@@ -19,11 +37,11 @@ const RouterIndex = () => {
     return (
         <Provider store={store}>
             <Switch>
-                <Route path="/" exact component={Home}/>
-                <Route path="/ad_news" exact component={AdNews}/>
-                {Routes(singlePageArticle,AdSinglePage)}
-                {Routes(adList, AdList)}
-                {Routes(addetail, Addetail)}
+                <Route path="/" exact component={dynamicComps.Home}/>
+                <Route path="/ad_news" exact component={dynamicComps.AdNews}/>
+                {Routes(singlePageArticle,dynamicComps.AdSinglePage)}
+                {Routes(adList, dynamicComps.AdList)}
+                {Routes(addetail, dynamicComps.Addetail)}
             </Switch>
         </Provider>
     )

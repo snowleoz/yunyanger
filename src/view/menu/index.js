@@ -1,7 +1,6 @@
 import React from 'react';
 import {Menu} from 'antd';
 import {NavLink,withRouter} from 'react-router-dom';
-import '../css/menu.css';
 const {Item, SubMenu, ItemGroup} = Menu;
 const MenuUI = (props) => {
     let {mode,className,location,onClick} = props;

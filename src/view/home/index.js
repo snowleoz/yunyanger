@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import CarouselUI from '../carousel';
 import BulletinUI from '../bulletin';
 import AdCardUI from '../adCard';
-import '../css/home.css'
 class HomeUI extends Component {
     componentDidMount() {
         this
@@ -10,6 +9,9 @@ class HomeUI extends Component {
             .getHomeData();
     }
     render() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        document.title = '深圳领养之家—示例站';
         let dataSource = this.props.dataSource;
         let carousel_data = dataSource.carousel_data
             ? dataSource.carousel_data

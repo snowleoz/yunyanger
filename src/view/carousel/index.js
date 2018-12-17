@@ -3,7 +3,6 @@ import {Card} from 'antd';
 const {Meta} = Card;
 import {NavLink} from 'react-router-dom';
 import {Carousel} from 'antd';
-import '../css/carousel.css';
 const CarouselUI = (props) => {
     const ad_url = {
         'cat':'wait_cat',

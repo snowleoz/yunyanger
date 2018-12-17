@@ -44,6 +44,7 @@
     transform: translate3d(0,0,0);
 }
 .m_menu_icon{
+    display:none;
     position: absolute;
     right:12%;
     top:50%;

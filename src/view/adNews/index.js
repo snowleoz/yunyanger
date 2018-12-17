@@ -1,12 +1,12 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
 import { List,Button } from 'antd';
-import '../css/adnews.css';
 class AdNewsUI extends Component{
     componentDidMount(){
         this.props.getNewsData();
     }
     render(){
+        document.title = '深圳领养之家—最新动态';
         let dataSource = this.props.dataSource;
         let is_loading_btn = dataSource.length>0?(dataSource.length/10).toString().indexOf('.')<0:false;
         let loading = dataSource[0]?false:true;

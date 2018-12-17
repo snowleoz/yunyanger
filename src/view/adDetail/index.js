@@ -1,7 +1,6 @@
 import React,{Component} from 'react';
 import { Carousel,Button,Modal} from 'antd';
 import AdSideUI from '../adSide';
-import '../css/addetail.css';
 class AddatailUI extends Component{
     componentDidMount(){
         this.first_load = true;
@@ -33,6 +32,9 @@ class AddatailUI extends Component{
         let side_data = dataSource.side_data?dataSource.side_data:[];
         let desc = data.detail_text?data.detail_text.split(','):[];
         let carousel_img = data.big_pic_src?data.big_pic_src.split(','):[];
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        document.title = data.name?`深圳领养之家—${data.name}`:'深圳领养之家—示例站';
         return (
             <div className="detail_wrap">
                 <div className="detail">
@@ -71,7 +73,7 @@ class AddatailUI extends Component{
                                 <span>性别：</span>
                                 <span>{data.sex}</span>
                             </p>
-                            <Button type="primary" className="detail_ad_btn" onClick={this.props.modalSwap}>我要领养</Button>
+                            <Button type="primary" className="detail_ad_btn" onClick={this.props.modalSwap}>{data.ad_status?(data.ad_status?'已被领养':'我要领养'):''}</Button>
                             <Modal 
                                 centered={true} 
                                 visible={this.props.modal_visible} 

@@ -1,5 +1,6 @@
 html,body{
     overflow: visible;
+    overflow-x:hidden;
     -webkit-overflow-scrolling: touch;
     background:#55b9ea;
     background: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
@@ -12,11 +13,18 @@ html,body{
 p,h2{
     margin:0;
 }
-a{
+a,a:hover{
     color:rgba(0, 0, 0, .65);;
 }
 ul{
     padding:0;
     list-style:none;  
     margin:0;
+}
+.no_support{
+    color:#fff;
+    font-size:40px;
+    text-align:center;
+    margin-top:100px;
+    line-height:80px;
 }

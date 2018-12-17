@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import AdCardSingle from '../adCardSingle';
-import '../css/adcard.css';
 const AdCardUI = (props)=>{
     const titles = {
         wait_cat:'待领养猫咪',

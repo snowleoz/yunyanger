@@ -3,7 +3,6 @@ import {NavLink} from 'react-router-dom';
 import {Icon} from 'antd';
 import MenuUI from '../menu';
 import logo from '../../assets/images/logo.png';
-import '../css/header.css';
 class HeaderUI extends Component{
     constructor(props){
         super(props);

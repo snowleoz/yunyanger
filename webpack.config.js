@@ -18,9 +18,13 @@ module.exports = {
         chunkFilename: '[name].bundle.[hash:5].js',
         publicPath: '/'
     },
-    // externals: {     'react': 'React',     'react-dom': 'ReactDOM',
-    // 'react-router-dom': 'ReactRouterDOM',     'axios': 'axios',     'antd':
-    // 'antd' },
+    externals: {
+        'react': 'React',
+        'react-dom': 'ReactDOM',
+        'react-router-dom': 'ReactRouterDOM',
+        'axios': 'axios',
+        'antd': 'antd'
+    },
     resolve: {
         alias: {
             view: path.resolve(__dirname, './src/view')
@@ -46,7 +50,7 @@ module.exports = {
                                     'style': 'css'
                                 }
                             ],
-                            // ['@babel/plugin-syntax-dynamic-import']
+                            ['@babel/plugin-syntax-dynamic-import']
                         ]
                     }
                 }
@@ -95,47 +99,48 @@ module.exports = {
     plugins: [
         new HtmlWebapckPlugin({
             template: path.resolve(__dirname, 'src/index.html'),
-            chunks: ['index']
+            chunks: ['index'],
+            favicon:'./src/favicon.ico'
         }),
         // new Webpack.optimize.CommonsChunkPlugin({names:['manifest']}),
         new ExtractTextWebpackPlugin('css/[name].[hash:5].css'),
-        // new PurifyCss({
-        //     paths: Glob.sync([
-        //         path.resolve(__dirname, 'src/*.js'),
-        //         path.resolve(__dirname, 'src/*.html'),
-        //         path.resolve(__dirname, 'src/**/*.js'),
-        //         path.resolve(__dirname, './node_modules/antd/dist/*.js')
-        //     ]),
-        //     minimize: true
-        // }),
-        // new Webpack
-        //     .optimize
-        //     .ModuleConcatenationPlugin({}),
-        // new Webpack
-        //     .optimize
-        //     .UglifyJsPlugin({
-        //         parallel: 4,
-        //         uglifyOptions: {
-        //             output: {
-        //                 comments: false,
-        //                 beautify: false
-        //             },
-        //             compress: {
-        //                 warnings: false
-        //             }
-        //         },
-        //         cache: true
-        //     }),
-        // new tinyPngWebpackPlugin({
-        //     key: 'TikTGmc9mJvMI4xHe2QpQb9lL2vRoqQP',
-        //     ext: ['png', 'jpeg', 'jpg']
-        // }),
+        new PurifyCss({
+            paths: Glob.sync([
+                path.resolve(__dirname, 'src/*.js'),
+                path.resolve(__dirname, 'src/*.html'),
+                path.resolve(__dirname, 'src/**/*.js'),
+                path.resolve(__dirname, './node_modules/antd/dist/*.js')
+            ]),
+            minimize: true
+        }),
+        new Webpack
+            .optimize
+            .ModuleConcatenationPlugin({}),
+        new Webpack
+            .optimize
+            .UglifyJsPlugin({
+                parallel: 4,
+                uglifyOptions: {
+                    output: {
+                        comments: false,
+                        beautify: false
+                    },
+                    compress: {
+                        warnings: false
+                    }
+                },
+                cache: true
+            }),
+        new tinyPngWebpackPlugin({
+            key: 'TikTGmc9mJvMI4xHe2QpQb9lL2vRoqQP',
+            ext: ['png', 'jpeg', 'jpg']
+        }),
         new CleanWebpackPlugin(['dist']),
-        // new Webpack.DefinePlugin({
-        //     'process.env': {
-        //         'NODE_ENV': '"production"'
-        //     }
-        // })
+        new Webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': '"production"'
+            }
+        })
     ],
     devServer: {
         contentBase: path.resolve(__dirname, 'dist'),

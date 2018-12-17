@@ -1,7 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import logo from '../../assets/images/logo.png';
-import '../css/footer.css';
 const FooterUI = () => {
     return (
         <footer className="footer-wrap">

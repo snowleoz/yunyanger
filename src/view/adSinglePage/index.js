@@ -1,10 +1,15 @@
 import React,{Component} from 'react';
 import { Skeleton } from 'antd';
 import AdSideUI from '../adSide'; 
-import '../css/adsinglepage.css'
 class AdSinglePageUI extends Component{
     constructor(props){
         super(props);
+        this.title = {
+            'ad_notice':'领养须知',
+            'ad_summary':'简介',
+            'contact':'联系我们',
+            'ad_news':'最新动态'
+        }
         this.data_req = {
             'ad_notice':props.getNoticeData,
             'ad_summary':props.getSummaryData,
@@ -19,6 +24,9 @@ class AdSinglePageUI extends Component{
         this.id?req_data(this.id):req_data();
     }
     render(){
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        document.title = `深圳领养之家—${this.title[this.match_link]}`
         let dataSource = this.props.dataSource;
         let data = dataSource.data?(dataSource.data[0]?dataSource.data[0]:dataSource.data):{}
         let title = data.title?data.title:'';

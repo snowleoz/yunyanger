@@ -1,6 +1,5 @@
 import React from 'react';
 import AdCardSingle from '../adCardSingle';
-import '../css/adside.css';
 const AdSideUI = (props) => {
     return (
         <div className="ad_sides_wrap">

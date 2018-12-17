@@ -5,7 +5,7 @@
     border-radius:4px;
 }
 .news_list{
-    padding:10px 20px;
+    padding:10px 20px !important;
 }
 .news_list .list_footer{
     text-align:center;
@@ -27,7 +27,7 @@
     right:0;
 }
 .ant-list-split .ant-list-header{
-    border:none;
+    border:none !important;
 }
 .ant-list-header h2{
     font-size:18px;
