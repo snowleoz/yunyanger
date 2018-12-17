@@ -31,10 +31,8 @@ class AdListUI extends Component {
         this.page = 0;
         this.load_more = false;
         this.first_load = true;
-        console.log('constructor')
     }
     componentDidMount() {
-        console.log('componentDidMount');
         this
             .props
             .getListDate(this.page,this.params);
@@ -62,7 +60,6 @@ class AdListUI extends Component {
         this
             .props
             .unmountDeleteData();
-        console.log('componentWillUnmount');
     }
     render() {
         let data = this.props.dataSource

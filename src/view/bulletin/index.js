@@ -24,12 +24,9 @@ const BulletinUI = (props) => {
                             <span>领养须知</span>
                         </h2>
                         <div className="bulletin_notice_content_wrap">
-                            {ad_notice_arr.map((item, index) => {
-                                return (
-                                    <p key={index} className="bulletin_notice_content">{`${item}；`}</p>
-                                )
-                            })
-}
+                            <p className="bulletin_notice_content">
+                                {ad_notice_arr.map(item=>(item))}
+                            </p>
                         </div>
                     </div>
                 </Skeleton>

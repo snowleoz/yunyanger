@@ -4,9 +4,9 @@ import {NavLink,withRouter} from 'react-router-dom';
 import '../css/menu.css';
 const {Item, SubMenu, ItemGroup} = Menu;
 const MenuUI = (props) => {
-    let {mode,className,location} = props;
+    let {mode,className,location,onClick} = props;
     return (
-        <Menu mode={mode} className={className} selectedKeys={[location.pathname]}>
+        <Menu mode={mode} className={className} selectedKeys={[location.pathname]} onClick={onClick}>
             <Item key="/">
                 <NavLink to="/">首页</NavLink>
             </Item>
@@ -46,6 +46,6 @@ const MenuUI = (props) => {
     )
 }
 export default withRouter((props)=>{
-    let {mode,className,location} = props;
-    return <MenuUI mode={mode} className={className} location={location}/>
+    let {mode,className,location,onClick} = props;
+    return <MenuUI mode={mode} className={className} location={location} onClick={onClick}/>
 });

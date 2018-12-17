@@ -9,8 +9,8 @@ const App = () => {
             <div className="app">
                 <HeaderUI/>
                 <RouterIndex/>
+                <FooterUI/>
             </div>
-            <FooterUI/>
         </div>
     )
 }

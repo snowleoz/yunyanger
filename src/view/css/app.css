@@ -1,11 +1,13 @@
 html,body{
-    overflow-x:hidden;
+    overflow: visible;
+    -webkit-overflow-scrolling: touch;
     background:#55b9ea;
     background: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
 }
 .app{
     width:1200px;
     margin:0 auto;
+    padding-bottom:20px;
 }
 p,h2{
     margin:0;

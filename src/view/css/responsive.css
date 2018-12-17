@@ -1,0 +1,150 @@
+@media screen and (max-width:1200px){
+    .app{
+        width:992px;
+    }
+    .ad_list_item{
+        width:25%;
+    }
+}
+@media screen and (max-width:992px){
+    .app{
+        width:768px;
+    }
+    .bulletin_notice_content_wrap{
+        height:120px;
+    }
+    .detail_info{
+        position:static;
+        text-align: center;
+    }
+}
+@media screen and (max-width:768px){
+    .app{
+        width:576px;
+    }
+    .logo{
+        width:100%;
+        border:none;
+    }
+    .ant-menu-horizontal > .ant-menu-item{
+        font-size:15px;
+    }
+    .menu{
+        position:static;
+        width:100%;
+        margin-top:20px;
+        box-sizing:border-box;
+        padding:0 10px;
+    }
+    .bulletin_notice_content_wrap{
+        height:60px;
+    }
+    .ad_card_item{
+        flex-wrap:wrap;
+    }
+    .ad_card_item .ad_card{
+        width:48%;
+        margin-bottom:10px;
+    }
+    .ad_card .ant-card-body{
+        padding:20px;
+    }
+    .ad_card .ant-card-body .ant-card-meta-title{
+        font-size:14px;
+    }
+    .ad_list_item{
+        width:33.33%;
+    }
+    .single_article_wrap{
+        padding: 30px 0 10px;
+        margin-top:20px;
+    }
+    .single_page_wrap{
+        width:100%;
+    }
+    .single_page_side_wrap{
+        width:100%;
+        margin-top:20px;
+    }
+    .ad_sides_wrap .ad_sides{
+        display:inline-block;
+        width:50%;
+        box-sizing:border-box;
+        padding:10px;
+    }
+    .detail_wrap{
+        padding: 30px 20px 10px;
+    }
+    .detail{
+        width:100%;
+    }
+    .detail_carousel_wrap, .detail_info{
+        min-height:100px;
+    }
+    .detail_side{
+        width:100%;
+        padding:0;
+        margin-top:10px;
+    }
+    .footer-wrap{
+        margin-top:20px;
+    }
+    .footer .footer_text{
+        width:100%;
+    }
+    .footer a{
+        position: static;
+        display:block;
+        width:100%;
+        padding:20px 0;
+    }
+}
+@media screen and (max-width:576px){
+    .app{
+        width:100%;
+        padding: 0 12px 20px;
+    }
+    .header_wrap{
+        position: static;
+    }
+    .menu{
+        display:none;
+    }
+    .m_menu{
+        display: block;
+    }
+    .ant-menu-submenu-popup{
+        width:100%;
+    }
+    .carousel_wrap{
+        width:100%;
+        margin-bottom:20px;
+    }
+    .bulletin_wrap{
+        position: static;
+        width:100%;
+    }
+    .ad_card_wrap{
+        padding:18px;
+    }
+    .ad_card_item .ad_card{
+        width:100%;
+        margin-bottom:18px;
+    }
+    .detail_carousel_wrap, .detail_info{
+        width:100%;
+    }
+    .detail_info{
+        margin-top:20px;
+    }
+    .ad_list_wrap{
+        padding: 20px 4px 10px;
+    }
+    .ad_list_item{
+        width:100%;
+    }
+    .ad_sides_wrap .ad_sides{
+        width:100%;
+        margin:0;
+    }
+}
