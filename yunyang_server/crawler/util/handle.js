@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 const axios = require('axios');
 const {uploadToQiniu} = require('../util/qiniu');
-const {qiniu_domain} = require('../config/custom');
+const {qiniu_domain,server_port} = require('../config/custom');
 module.exports = {
     console(info) {
         return new Promise((resolve) => {
@@ -328,7 +328,7 @@ module.exports = {
                 case 'lists':
                     {
                         axios
-                            .post(`http://127.0.0.1:1337${query}`, data)
+                            .post(`http://127.0.0.1:${server_port}${query}`, data)
                             .then((res) => {
                                 resolve(res.data);
                             })
@@ -337,7 +337,7 @@ module.exports = {
                 case 'details':
                     {
                         axios
-                            .post(`http://127.0.0.1:1337${query}`, data)
+                            .post(`http://127.0.0.1:${server_port}${query}`, data)
                             .then((res) => {
                                 resolve(res.data);
                             })
