@@ -104,43 +104,43 @@ module.exports = {
         }),
         // new Webpack.optimize.CommonsChunkPlugin({names:['manifest']}),
         new ExtractTextWebpackPlugin('css/[name].[hash:5].css'),
-        new PurifyCss({
-            paths: Glob.sync([
-                path.resolve(__dirname, 'src/*.js'),
-                path.resolve(__dirname, 'src/*.html'),
-                path.resolve(__dirname, 'src/**/*.js'),
-                path.resolve(__dirname, './node_modules/antd/dist/*.js')
-            ]),
-            minimize: true
-        }),
-        new Webpack
-            .optimize
-            .ModuleConcatenationPlugin({}),
-        new Webpack
-            .optimize
-            .UglifyJsPlugin({
-                parallel: 4,
-                uglifyOptions: {
-                    output: {
-                        comments: false,
-                        beautify: false
-                    },
-                    compress: {
-                        warnings: false
-                    }
-                },
-                cache: true
-            }),
-        new tinyPngWebpackPlugin({
-            key: 'TikTGmc9mJvMI4xHe2QpQb9lL2vRoqQP',
-            ext: ['png', 'jpeg', 'jpg']
-        }),
-        new CleanWebpackPlugin(['dist']),
-        new Webpack.DefinePlugin({
-            'process.env': {
-                'NODE_ENV': '"production"'
-            }
-        })
+        // new PurifyCss({
+        //     paths: Glob.sync([
+        //         path.resolve(__dirname, 'src/*.js'),
+        //         path.resolve(__dirname, 'src/*.html'),
+        //         path.resolve(__dirname, 'src/**/*.js'),
+        //         path.resolve(__dirname, './node_modules/antd/dist/*.js')
+        //     ]),
+        //     minimize: true
+        // }),
+        // new Webpack
+        //     .optimize
+        //     .ModuleConcatenationPlugin({}),
+        // new Webpack
+        //     .optimize
+        //     .UglifyJsPlugin({
+        //         parallel: 4,
+        //         uglifyOptions: {
+        //             output: {
+        //                 comments: false,
+        //                 beautify: false
+        //             },
+        //             compress: {
+        //                 warnings: false
+        //             }
+        //         },
+        //         cache: true
+        //     }),
+        // new tinyPngWebpackPlugin({
+        //     key: 'TikTGmc9mJvMI4xHe2QpQb9lL2vRoqQP',
+        //     ext: ['png', 'jpeg', 'jpg']
+        // }),
+        // new CleanWebpackPlugin(['dist']),
+        // new Webpack.DefinePlugin({
+        //     'process.env': {
+        //         'NODE_ENV': '"production"'
+        //     }
+        // })
     ],
     devServer: {
         contentBase: path.resolve(__dirname, 'dist'),

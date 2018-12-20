@@ -6,6 +6,8 @@ class AddatailUI extends Component{
         this.first_load = true;
         this.data_loading = false;
         this.props.getNewsData(this.props.match.params.id);
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
     }
     shouldComponentUpdate(nextProps){
         if(this.props.modal_visible !== nextProps.modal_visible){
@@ -32,8 +34,6 @@ class AddatailUI extends Component{
         let side_data = dataSource.side_data?dataSource.side_data:[];
         let desc = data.detail_text?data.detail_text.split(','):[];
         let carousel_img = data.big_pic_src?data.big_pic_src.split(','):[];
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
         document.title = data.name?`深圳领养之家—${data.name}`:'深圳领养之家—示例站';
         return (
             <div className="detail_wrap">
