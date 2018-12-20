@@ -4,8 +4,9 @@ import {NavLink,withRouter} from 'react-router-dom';
 const {Item, SubMenu, ItemGroup} = Menu;
 const MenuUI = (props) => {
     let {mode,className,location,onClick} = props;
+    let pathname = `/${location.pathname.split('/')[1]}`;
     return (
-        <Menu mode={mode} className={className} selectedKeys={[location.pathname]} onClick={onClick}>
+        <Menu mode={mode} className={className} selectedKeys={[pathname]} onClick={onClick}>
             <Item key="/">
                 <NavLink to="/">首页</NavLink>
             </Item>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button} from 'antd';
+import {Button,Spin} from 'antd';
 import AdCardSingle from '../adCardSingle';
 class AdListUI extends Component {
     constructor(props) {
@@ -34,6 +34,7 @@ class AdListUI extends Component {
         }
         this.title = title_name[type_pathname];
         this.params = type[type_pathname];
+        this.loading = true;
     }
     componentDidMount() {
         if(this.props.dataSource.length==0){
@@ -69,31 +70,38 @@ class AdListUI extends Component {
         let data = this.props.dataSource
             ? this.props.dataSource
             : [];
+        this.loading = !data.length>0;
         return (
-            <div className="ad_list_wrap">
-                <ul className="ad_list">
-                    {
-                        data.map((item) => {
-                            return (
-                                <li className="ad_list_item" key={item._id}>
-                                    <AdCardSingle data={item}/>
-                                </li>
-                            )
-                        })
-                    }
-                </ul>
-                <div className="list_footer">
-                    {
-                        this.props.hasNext?(
-                            <Button type="primary" onClick={()=>{
-                                this.props.getListDate(this.page,this.params)
-                            }}>加载更多</Button>
-                        ):(
-                            <p>没有更多了...</p>
-                        )
-                    }
+            this.loading?(
+                <div className="ad_list_loading">
+                    <Spin size={'large'}/>
                 </div>
-            </div>
+            ):(
+                <div className="ad_list_wrap">
+                    <ul className="ad_list">
+                        {
+                            data.map((item) => {
+                                return (
+                                    <li className="ad_list_item" key={item._id}>
+                                        <AdCardSingle data={item}/>
+                                    </li>
+                                )
+                            })
+                        }
+                    </ul>
+                    <div className="list_footer">
+                        {
+                            this.props.hasNext?(
+                                <Button type="primary" onClick={()=>{
+                                    this.props.getListDate(this.page,this.params)
+                                }}>加载更多</Button>
+                            ):(
+                                <p>没有更多了...</p>
+                            )
+                        }
+                    </div>
+                </div>
+            )
         )
     }
 }

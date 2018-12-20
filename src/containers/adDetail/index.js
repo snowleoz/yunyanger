@@ -1,6 +1,6 @@
 import AddatailUI from '../../view/adDetail';
 import {connect} from 'react-redux';
-import {getDetailRequest,getModalAction} from './action/actionCreater';
+import {getDetailRequest,getModalAction,getDeleteDataAction} from './action/actionCreater';
 const mapStateToProps = (state) => {
     return {
         dataSource:state.detail.dataSource,
@@ -19,6 +19,10 @@ const mapDispatchToProps = (dispatch) => {
         },
         goToContact(){
             window.location.href = '/contact';
+        },
+        deleteDataSource(){
+            const action = getDeleteDataAction();
+            dispatch(action);
         }
     }
 }

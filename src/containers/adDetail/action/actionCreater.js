@@ -1,4 +1,4 @@
-import {GET_DETAIL_DATA,CHANGE_MODAL_VISIBLE} from './types';
+import {GET_DETAIL_DATA,CHANGE_MODAL_VISIBLE,DELETE_DATA_SOURCE} from './types';
 import axios from 'axios';
 import {request_url} from '../../../config/config';
 const _getDetailAction = (data)=>{
@@ -32,4 +32,9 @@ const getModalAction = ()=>{
         type:CHANGE_MODAL_VISIBLE
     }
 }
-export {getDetailRequest,getModalAction}
+const getDeleteDataAction = ()=>{
+    return {
+        type:DELETE_DATA_SOURCE
+    }
+}
+export {getDetailRequest,getModalAction,getDeleteDataAction}
