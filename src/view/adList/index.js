@@ -56,7 +56,6 @@ class AdListUI extends Component {
             this.props.unmountDeleteData();
             this.props.getListDate(0,this.params);
             this.props.setOldUrlPath(this.props.match.path);
-            console.log('更换类目')
         }
     }
     shouldComponentUpdate(nextProps){
