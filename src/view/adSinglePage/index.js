@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import { Skeleton } from 'antd';
+import { Spin } from 'antd';
 import AdSideUI from '../adSide'; 
 class AdSinglePageUI extends Component{
     constructor(props){
@@ -18,6 +18,7 @@ class AdSinglePageUI extends Component{
         }
         this.match_link = props.match.path.split('/')[1];
         this.id = props.match.params.id;
+        this.loading = true;
     }
     componentDidMount(){
         let req_data = this.data_req[this.match_link];
@@ -28,33 +29,37 @@ class AdSinglePageUI extends Component{
         document.documentElement.scrollTop = 0;
         document.title = `深圳领养之家—${this.title[this.match_link]}`
         let dataSource = this.props.dataSource;
+        this.loading = !Object.keys(dataSource).length>0;
         let data = dataSource.data?(dataSource.data[0]?dataSource.data[0]:dataSource.data):{}
         let title = data.title?data.title:'';
         let content = data.content?data.content.split('。'):[];
         content.pop();
         let side_data = dataSource.side_data?dataSource.side_data:[];
-        let loading = content.length>0?false:true;
         return (
-            <Skeleton active loading={loading}>
-                <div className="single_article_wrap">
-                    <div className="single_page_wrap">
-                        <h2><span>{title}</span></h2>
-                        <article className="single_page_content">
-                            {
-                                content.map((item,index)=>{
-                                    return (
-                                        <p key={index}>{item}；</p>
-                                    )
-                                })
-                            }
-                        </article>
-                        <div className="single_article_line"></div>
+                this.loading?(
+                    <div className="ad_single_page_loding">
+                        <Spin size="large"/>
                     </div>
-                    <div className="single_page_side_wrap">
-                        <AdSideUI side_data={side_data}/>
+                ):(
+                    <div className="single_article_wrap">
+                        <div className="single_page_wrap">
+                            <h2><span>{title}</span></h2>
+                            <article className="single_page_content">
+                                {
+                                    content.map((item,index)=>{
+                                        return (
+                                            <p key={index}>{item}；</p>
+                                        )
+                                    })
+                                }
+                            </article>
+                            <div className="single_article_line"></div>
+                        </div>
+                        <div className="single_page_side_wrap">
+                            <AdSideUI side_data={side_data}/>
+                        </div>
                     </div>
-                </div>
-            </Skeleton>
+                )
         )
     }
 }

@@ -38,3 +38,13 @@
     width:30%;
     padding: 0px 20px 10px;
 }
+.ad_single_page_loding{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    min-height:500px;
+    background:#fff;
+    margin-top:40px;
+    box-shadow: 0px 0px 4px 0 rgba(0, 0, 0, .8);
+    border-radius: 4px;
+}

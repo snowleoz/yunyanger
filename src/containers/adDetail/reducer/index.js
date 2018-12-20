@@ -1,4 +1,4 @@
-import {GET_DETAIL_DATA,CHANGE_MODAL_VISIBLE} from '../action/types';
+import {GET_DETAIL_DATA,CHANGE_MODAL_VISIBLE,DELETE_DATA_SOURCE} from '../action/types';
 const defaultState = {
     dataSource:{},
     modal_visible:false
@@ -13,6 +13,11 @@ export default (state=defaultState,action)=>{
         case CHANGE_MODAL_VISIBLE:{
             const newState = JSON.parse(JSON.stringify(state));
             newState.modal_visible = !state.modal_visible;
+            return newState;
+        }
+        case DELETE_DATA_SOURCE:{
+            const newState = JSON.parse(JSON.stringify(state));
+            newState.dataSource = {};
             return newState;
         }
         default:{

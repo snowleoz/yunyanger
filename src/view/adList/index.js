@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button} from 'antd';
+import {Button,Spin} from 'antd';
 import AdCardSingle from '../adCardSingle';
 class AdListUI extends Component {
     constructor(props) {
@@ -34,71 +34,74 @@ class AdListUI extends Component {
         }
         this.title = title_name[type_pathname];
         this.params = type[type_pathname];
-        this.page = 0;
-        this.load_more = false;
-        this.first_load = true;
+        this.loading = true;
     }
     componentDidMount() {
-        this
-            .props
-            .getListDate(this.page,this.params);
+        if(this.props.dataSource.length==0){
+            this.page = 0;
+            this.props.getListDate(0,this.params)
+            this.props.setOldUrlPath(this.props.match.path);
+        }
+        if(this.props.history.action == 'POP' && this.props.dataSource.length>0){
+            if(this.props.old_url_path !== this.props.match.path){
+                this.page = 0;
+                this.props.unmountDeleteData();
+                this.props.getListDate(this.props.page,this.params);
+                this.props.setOldUrlPath(this.props.match.path);
+            }else{
+                this.page = this.props.dataSource.length/10;
+            }
+        }
+        if(this.props.history.action == 'PUSH' && this.props.dataSource.length>0){
+            this.page = 0;
+            this.props.unmountDeleteData();
+            this.props.getListDate(0,this.params);
+            this.props.setOldUrlPath(this.props.match.path);
+        }
     }
     shouldComponentUpdate(nextProps){
-        if(this.props.dataSource.length>nextProps.dataSource.length){
-            return true;
+        if(nextProps.dataSource.length>0){
+            (nextProps.dataSource.length/10).toString().indexOf('.')<0?++this.page:false;
         }
-        if(this.first_load){
-            this.first_load = false;
-            this.load_more = (nextProps.dataSource.length/10).toString().indexOf('.')<0?true:false;
-            this.load_more?++this.page:false;
-            return true;
-        }else{
-            this.load_more = 
-                this.props.dataSource.length < nextProps.dataSource.length 
-                && 
-                (nextProps.dataSource.length/10).toString().indexOf('.')<0
-                ?true:false;
-            this.load_more?++this.page:false;
-            return true;
-        }
-    }
-    componentWillUnmount() {
-        this
-            .props
-            .unmountDeleteData();
+        return true;
     }
     render() {
         document.title = `深圳领养之家—${this.title}`;
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
         let data = this.props.dataSource
             ? this.props.dataSource
             : [];
+        this.loading = !data.length>0;
         return (
-            <div className="ad_list_wrap">
-                <ul className="ad_list">
-                    {
-                        data.map((item) => {
-                            return (
-                                <li className="ad_list_item" key={item._id}>
-                                    <AdCardSingle data={item}/>
-                                </li>
-                            )
-                        })
-                    }
-                </ul>
-                <div className="list_footer">
-                    {
-                        this.load_more?(
-                            <Button type="primary" onClick={()=>{
-                                this.props.getListDate(this.page,this.params)
-                            }}>加载更多</Button>
-                        ):(
-                            <p>没有更多了...</p>
-                        )
-                    }
+            this.loading?(
+                <div className="ad_list_loading">
+                    <Spin size={'large'}/>
                 </div>
-            </div>
+            ):(
+                <div className="ad_list_wrap">
+                    <ul className="ad_list">
+                        {
+                            data.map((item) => {
+                                return (
+                                    <li className="ad_list_item" key={item._id}>
+                                        <AdCardSingle data={item}/>
+                                    </li>
+                                )
+                            })
+                        }
+                    </ul>
+                    <div className="list_footer">
+                        {
+                            this.props.hasNext?(
+                                <Button type="primary" onClick={()=>{
+                                    this.props.getListDate(this.page,this.params)
+                                }}>加载更多</Button>
+                            ):(
+                                <p>没有更多了...</p>
+                            )
+                        }
+                    </div>
+                </div>
+            )
         )
     }
 }

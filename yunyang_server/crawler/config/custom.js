@@ -3,5 +3,7 @@ module.exports = {
     viewPort:{width:1920,height:1080},
     url:'http://www.szadoptpet.com/product',
     initWaitFor:3000,
-    qiniu_domain:'http://pit6lysx0.bkt.clouddn.com/'
+    qiniu_domain:'http://pjy4ebzoy.bkt.clouddn.com/',
+    server_port:'1337'
 }
+//http://pit6lysx0.bkt.clouddn.com/

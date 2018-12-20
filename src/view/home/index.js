@@ -4,9 +4,7 @@ import BulletinUI from '../bulletin';
 import AdCardUI from '../adCard';
 class HomeUI extends Component {
     componentDidMount() {
-        this
-            .props
-            .getHomeData();
+        Object.keys(this.props.dataSource).length==0?this.props.getHomeData():false;
     }
     render() {
         document.body.scrollTop = 0;
@@ -17,7 +15,7 @@ class HomeUI extends Component {
             ? dataSource.carousel_data
             : [];
         let ad_news = dataSource.news_data
-            ? dataSource.news_data[0].news_content
+            ? dataSource.news_data[0].content
             : '';
         let ad_notice = dataSource.notice_data
             ? dataSource.notice_data[0].content
