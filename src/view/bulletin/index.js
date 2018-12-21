@@ -12,7 +12,7 @@ const BulletinUI = (props) => {
             <div className="bulletin">
                 <Skeleton active title loading={loading}>
                     <div>
-                        <NavLink to='/ad_news/5c06a54981ba1561f8585507'>
+                        <NavLink to='/ad_news/5c19d845116e636593c6c0f1'>
                             <h2>
                                 <span>最新动态</span>
                             </h2>
