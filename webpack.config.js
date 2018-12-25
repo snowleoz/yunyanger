@@ -3,14 +3,13 @@ const Webpack = require('webpack');
 const HtmlWebapckPlugin = require('html-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const Cssnext = require('postcss-cssnext');
-const flexibility = require('postcss-flexibility');
 const PurifyCss = require('purifycss-webpack');
 const Glob = require('glob-all');
 const tinyPngWebpackPlugin = require('tinypng-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
     entry: {
-        index: path.resolve(__dirname, './src/index.js')
+        'index': path.resolve(__dirname, './src/index.js')
     },
     output: {
         path: path.resolve(__dirname, './dist'),
@@ -99,10 +98,10 @@ module.exports = {
     plugins: [
         new HtmlWebapckPlugin({
             template: path.resolve(__dirname, 'src/index.html'),
-            chunks: ['index'],
+            chunks: ['common','index'],
             favicon:'./src/favicon.ico'
         }),
-        // new Webpack.optimize.CommonsChunkPlugin({names:['manifest']}),
+        // new Webpack.optimize.CommonsChunkPlugin({names:['manifest','common'],filename:'common.js',chunks:['common']}),
         new ExtractTextWebpackPlugin('css/[name].[hash:5].css'),
         new PurifyCss({
             paths: Glob.sync([
