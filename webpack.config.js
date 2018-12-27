@@ -98,10 +98,10 @@ module.exports = {
     plugins: [
         new HtmlWebapckPlugin({
             template: path.resolve(__dirname, 'src/index.html'),
-            chunks: ['common','index'],
+            chunks: ['index'],
             favicon:'./src/favicon.ico'
         }),
-        // new Webpack.optimize.CommonsChunkPlugin({names:['manifest','common'],filename:'common.js',chunks:['common']}),
+        // new Webpack.optimize.CommonsChunkPlugin({name:'vendor',minChunks:Infinity}),
         new ExtractTextWebpackPlugin('css/[name].[hash:5].css'),
         new PurifyCss({
             paths: Glob.sync([
